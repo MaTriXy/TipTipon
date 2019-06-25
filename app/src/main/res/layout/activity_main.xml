@@ -1,19 +1,224 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/content"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        android:layout_height="match_parent">
 
-    <TextView
+    <androidx.constraintlayout.widget.Guideline
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hello World!"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+            android:id="@+id/guideline_vertical_start"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="@dimen/vertical_start_guideline"/>
+
+    <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/guideline_vertical_end"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="@dimen/vertical_end_guidline"/>
+
+
+    <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:id="@+id/tipCalcTextGuideline"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_percent="@dimen/start_tipText_guideline"/>
+
+    <TextView
+            style="@style/infoTextBold"
+            android:id="@+id/tip_per_person_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/tip_per_person_label"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toStartOf="@+id/tip_per_person"
+            android:layout_marginTop="@dimen/tip_per_person_label_margin_top"
+            app:layout_constraintBottom_toTopOf="@+id/total_per_person_label"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+            android:layout_marginBottom="@dimen/tip_per_person_label_margin_bottom"
             app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+            style="@style/infoTextBold"
+            android:id="@+id/tip_per_person"
+            tools:text="96.39"
+            android:textAlignment="center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/tip_per_person_label"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_end"
+            app:layout_constraintTop_toTopOf="@+id/tip_per_person_label"
+            app:layout_constraintBottom_toBottomOf="@+id/tip_per_person_label"/>
+
+
+    <TextView
+            style="@style/infoTextBold"
+            android:id="@+id/total_per_person_label"
+            android:text="@string/total_per_person_label"
+            android:layout_width="0dp"
+            android:textAlignment="center"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/tipCalcTextGuideline"
+            app:layout_constraintEnd_toStartOf="@+id/total_per_person"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+    />
+
+    <TextView
+            style="@style/infoTextBold"
+            tools:text="96.39"
+            android:id="@+id/total_per_person"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            app:layout_constraintStart_toEndOf="@+id/total_per_person_label"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintTop_toTopOf="@+id/total_per_person_label"
+            android:layout_marginBottom="@dimen/total_per_person_margin_bottom"
+            app:layout_constraintBottom_toBottomOf="@+id/total_per_person_label"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_end"/>
+
+    <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:id="@+id/billGuideline"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_percent="@dimen/bill_guideline"/>
+
+    <TextView
+            android:id="@+id/bill_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bill_label"
+            style="@style/textInfoLabel"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="@+id/input_bill"
+            app:layout_constraintStart_toStartOf="@+id/input_bill"
+            app:layout_constraintBottom_toTopOf="@+id/input_bill"/>
+
+    <EditText
+            android:id="@+id/input_bill"
+            android:hint="@string/bill_label_hint"
+            android:layout_width="@dimen/input_field_width"
+            app:layout_constraintBottom_toTopOf="@id/billGuideline"
+            app:layout_constraintStart_toStartOf="@id/guideline_vertical_start"
+            app:layout_constraintEnd_toStartOf="@id/guideline_vertical_end"
+            android:layout_height="wrap_content"
+            android:imeOptions="flagNoExtractUi"
+            android:gravity="center"
+            style="@style/inputTextBold"
+            android:inputType="numberDecimal"
+            tools:ignore="MissingConstraints"/>
+
+
+    <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:id="@+id/tipGuideline"
+            app:layout_constraintGuide_percent="0.60"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:id="@+id/tip_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tip_percentage_label"
+            android:textAlignment="center"
+            style="@style/textInfoLabel"
+            app:layout_constraintEnd_toEndOf="@id/input_tip_percentage"
+            app:layout_constraintStart_toStartOf="@id/input_tip_percentage"
+            app:layout_constraintBottom_toTopOf="@id/input_tip_percentage"
+
+    />
+
+    <ImageButton
+            android:id="@+id/decreaseTipButton"
+            style="@style/InputButtonDecrease"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintBottom_toTopOf="@id/tipGuideline"
+            app:layout_constraintStart_toStartOf="@id/guideline_vertical_start"
+            app:layout_constraintHorizontal_bias="@dimen/constraint_horizontal_bias"
+            app:layout_constraintEnd_toStartOf="@+id/input_tip_percentage"/>
+
+    <EditText
+            android:id="@+id/input_tip_percentage"
+            android:hint="@string/tip_percentage_label_hint"
+            android:layout_width="@dimen/input_field_width"
+            android:imeOptions="flagNoExtractUi"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:gravity="center"
+            style="@style/inputTextBold"
+            app:layout_constraintBottom_toTopOf="@id/tipGuideline"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintStart_toEndOf="@+id/decreaseTipButton"
+            app:layout_constraintHorizontal_bias="@dimen/constraint_horizontal_bias"
+            app:layout_constraintEnd_toStartOf="@+id/increaseTipButton"/>
+
+    <ImageButton
+            android:id="@+id/increaseTipButton"
+            style="@style/InputButtonIncrease"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintBottom_toTopOf="@id/tipGuideline"
+            app:layout_constraintStart_toEndOf="@+id/input_tip_percentage"
+            app:layout_constraintHorizontal_bias="@dimen/constraint_horizontal_bias"
+            app:layout_constraintEnd_toEndOf="@id/guideline_vertical_end"/>
+
+
+    <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:id="@+id/peopleGuideline"
+            app:layout_constraintGuide_percent="0.75"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:id="@+id/people_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/people_label"
+            android:textAlignment="center"
+            style="@style/textInfoLabel"
+            app:layout_constraintEnd_toEndOf="@id/input_people_amount"
+            app:layout_constraintStart_toStartOf="@id/input_people_amount"
+            app:layout_constraintBottom_toTopOf="@id/input_people_amount"/>
+
+
+    <ImageButton
+            app:layout_constraintBottom_toTopOf="@id/peopleGuideline"
+            tools:ignore="MissingConstraints"
+            android:id="@+id/decreasePeopleButton"
+            style="@style/InputButtonDecrease"
+            app:layout_constraintStart_toStartOf="@id/guideline_vertical_start"
+            app:layout_constraintHorizontal_bias="@dimen/constraint_horizontal_bias"
+            app:layout_constraintEnd_toStartOf="@+id/input_people_amount"
+    />
+    <EditText
+            android:id="@+id/input_people_amount"
+            android:layout_width="@dimen/input_field_width"
+            android:hint="@string/people_label_hint"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:gravity="center"
+            android:imeOptions="flagNoExtractUi"
+            style="@style/inputTextBold"
+            app:layout_constraintHorizontal_bias="@dimen/constraint_horizontal_bias"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintBottom_toTopOf="@id/peopleGuideline"
+            app:layout_constraintStart_toEndOf="@+id/decreasePeopleButton"
+            app:layout_constraintEnd_toStartOf="@+id/increasePeopleButton"/>
+    <ImageButton
+            android:id="@+id/increasePeopleButton"
+            tools:ignore="MissingConstraints"
+            style="@style/InputButtonIncrease"
+            app:layout_constraintBottom_toTopOf="@id/peopleGuideline"
+            app:layout_constraintStart_toEndOf="@+id/input_people_amount"
+            app:layout_constraintHorizontal_bias="@dimen/constraint_horizontal_bias"
+            app:layout_constraintEnd_toEndOf="@id/guideline_vertical_end"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

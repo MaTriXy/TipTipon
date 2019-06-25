@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="vertical_end_guidline" type="dimen" format="float">0.96</item>
+    <item name="vertical_start_guideline" type="dimen" format="float">0.04</item>
+    <item name="start_tipText_guideline" type="dimen" format="float">0.30</item>
+    <item name="bill_guideline" type="dimen" format="float">0.45</item>
+    <item name="constraint_horizontal_bias" type="dimen" format="float">0.5</item>
+    <dimen name="tip_per_person_label_margin_top">8dp</dimen>
+    <dimen name="tip_per_person_label_margin_bottom">16dp</dimen>
+    <dimen name="total_per_person_margin_bottom">8dp</dimen>
+    <dimen name="input_field_width">200dp</dimen>
+</resources>
+

@@ -8,4 +8,39 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="infoTextBold">
+        <item name="android:textSize">@dimen/info_text_bold_text_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="inputTextBold">
+        <item name="android:textSize">@dimen/input_text_bold_text_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="textInfoLabel">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="inputImageButton" parent="Widget.AppCompat.ImageButton">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:scaleType">center</item>
+    </style>
+    <style name="InputButtonDecrease" parent="inputImageButton">
+        <item name="android:src">@drawable/ic_minus_one</item>
+    </style>
+
+    <style name="InputButtonIncrease" parent="inputImageButton">
+        <item name="android:src">@drawable/ic_plus_one</item>
+    </style>
+
+
+    <dimen name="info_text_bold_text_size">30sp</dimen>
+    <dimen name="input_text_bold_text_size">18sp</dimen>
 </resources>

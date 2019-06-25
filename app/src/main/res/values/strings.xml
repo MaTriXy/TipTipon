@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">TipTipon</string>
+
+
+    <string name="tip_label">Tip</string>
+    <string name="total_label">Total</string>
+    <string name="bill_label">Bill</string>
+    <string name="bill_label_hint">Total Bill without tip</string>
+    <string name="people_label">Number of people</string>
+    <string name="people_label_hint">Enter Number of people</string>
+    <string name="tip_percentage_label_hint">Enter Tip %</string>
+    <string name="tip_percentage_label">Tip %</string>
+    <string name="total_per_person_label">Total\nper person</string>
+    <string name="tip_per_person_label">Tip\nper person</string>
+
+    <string name="num_people_text">%1$d</string>
+    <string name="tip_out_of_bounds">Tip percentage should\nbe in 0.100 range</string>
+
+
 </resources>
